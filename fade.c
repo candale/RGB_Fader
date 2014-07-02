@@ -38,8 +38,8 @@
 #include <sys/types.h>
 #include <unistd.h>
 
- typedef struct
- {
+typedef struct
+{
 	int  x, y, z;
 } coord;
 
@@ -48,26 +48,26 @@ static coord  v; // the current rgb coordinates (colour) being displayed
 /*
  Vertices of a cube
 			
-		C+----------+G
-		/|        / |
-	B+---------+F |
-	 | |       |  |    y   
-	 |D+-------|--+H   ^  7 z
-	 |/        | /     | /
-	A+---------+E      +--->x
+  C+----------+G
+  /|        / |
+B+---------+F |
+ | |       |  |    y   
+ |D+-------|--+H   ^  7 z
+ |/        | /     | /
+A+---------+E      +--->x
 
 */
-	const coord vertex[] = 
-	{
- //x  y  z      name
-	{0, 0, 0}, // A or 0
-	{0, 1, 0}, // B or 1
-	{0, 1, 1}, // C or 2
-	{0, 0, 1}, // D or 3
-	{1, 0, 0}, // E or 4
-	{1, 1, 0}, // F or 5
-	{1, 1, 1}, // G or 6
-	{1, 0, 1}  // H or 7
+const coord vertex[] = 
+{
+//x  y  z      name
+{0, 0, 0}, // A or 0
+{0, 1, 0}, // B or 1
+{0, 1, 1}, // C or 2
+{0, 0, 1}, // D or 3
+{1, 0, 0}, // E or 4
+{1, 1, 0}, // F or 5
+{1, 1, 1}, // G or 6
+{1, 0, 1}  // H or 7
 };
 
 /*
@@ -76,8 +76,8 @@ static coord  v; // the current rgb coordinates (colour) being displayed
  representation as decimal, so chars 0x12, 0x34 ... should be interpreted as vertex 1 to 
  v2 to v3 to v4 (ie, one continuous path B to C to D to E).
 */
- const char path[] =
- {
+const char path[] =
+{
 	0x01, 0x23, 0x76, 0x54, 0x03, 0x21, 0x56, 0x74,  // trace the edges
 	0x13, 0x64, 0x16, 0x02, 0x75, 0x24, 0x35, 0x17, 0x25, 0x70,  // do the diagonals
 };
@@ -133,9 +133,9 @@ void loop()
 
 int main() {
 	while(1) {
-	 printf("Another loop \n");
-	 loop();
-	 break;
- }
- return 0;
+		printf("Another loop \n");
+		loop();
+		break;
+	}
+	return 0;
 }

@@ -163,6 +163,8 @@ struct color line3d(struct color a, struct color b)
     return (struct color) {x, y, z};
 }
 
+
+
 struct color next_color(int dir, int no_times) {
   for(int i = 0; i < no_times; i ++) {
       // if we reached or current target
@@ -347,6 +349,8 @@ void loop() {
   button_manual = digitalRead(MANUAL_MODE_PIN);
   button_auto = digitalRead(AUTO_MODE_PIN);
   
+  //delay(10);
+
   if(button_manual && dir != 0) {
     next_color(ZSGN(encoder_changed), 7);
     write_rgb(current_color);
